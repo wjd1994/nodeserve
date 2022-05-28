@@ -1,6 +1,6 @@
 const Koa = require('koa');
+const fs = require('fs')
 
-const app = new Koa();
 
 function testfn(){
     console.log("test")
@@ -11,12 +11,22 @@ function testfn(){
 }
  
 
-app.use(async ctx => {
-
+const Router = require('koa-router');
  
-    ctx.body = 'ksjf;lka';
+const app = new Koa();
+const router = new Router({prefix: '/api'});
+ 
+router.get('/name', (ctx, next) => {
+    ctx.body = {
+        name: 'xuxiaoxi'
+    }
+  });
+ 
+app
+  .use(router.routes())
+  .use(router.allowedMethods());
 
-});
+
 
  
 
