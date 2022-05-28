@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "node index.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "koa": "^2.13.4"
+    "@vercel/node": "^1.15.0",
+    "koa": "^2.13.4",
+    "nodemon": "^2.0.16"
   }
 }
